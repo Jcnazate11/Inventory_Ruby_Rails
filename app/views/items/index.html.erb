@@ -1,0 +1,30 @@
+<div class="tittle">
+  <h1>Inventory</h1>
+</div>
+<%= notice %>
+
+<div class="newitemsection">
+  <%= link_to 'New Item', new_item_path %>
+</div>
+
+<div class="table-container">
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= link_to item.name, item_path(item), class: 'product-link' %></td>
+          <td>
+            <%= link_to 'Edit', edit_item_path(item), class: 'btn' %>
+            <%= button_to 'Destroy', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

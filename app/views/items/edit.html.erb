@@ -1,0 +1,25 @@
+<div class="edit-container">
+  <h1 class="edit-title">Edit Product</h1>
+
+  <%= form_with(model: @item, local: true, html: { class: 'edit-form' }) do |form| %>
+    <div class="edit-form-group">
+      <%= form.label :name, class: 'edit-label' %>
+      <%= form.text_field :name, class: 'edit-input' %>
+    </div>
+
+    <div class="edit-form-group">
+      <%= form.label :description, class: 'edit-label' %>
+      <%= form.text_area :description, class: 'edit-textarea' %>
+    </div>
+
+    <div class="edit-form-group">
+      <%= form.label :quantity, class: 'edit-label' %>
+      <%= form.number_field :quantity, class: 'edit-input' %>
+    </div>
+
+    <div class="edit-actions">
+      <%= form.submit 'Save', class: 'edit-submit' %>
+      <%= link_to 'Cancel', item_path(@item), class: 'edit-cancel' %>
+    </div>
+  <% end %>
+</div>

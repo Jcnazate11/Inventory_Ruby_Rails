@@ -1,0 +1,10 @@
+<div class="product-container">
+  <h1 class="product-title"><%= @item.name %></h1>
+  <p class="product-description"><%= @item.description %></p>
+  <p class="product-quantity">Quantity: <%= @item.quantity %></p>
+
+  <div class="product-actions">
+    <%= link_to 'Edit', edit_item_path(@item), class: 'product-edit-link' %> |
+    <%= link_to 'Back', items_path, class: 'product-back-link' %>
+  </div>
+</div>

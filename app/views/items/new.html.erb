@@ -1,0 +1,24 @@
+<div class="new-item-container">
+  <h1 class="new-item-title">New Item</h1>
+
+  <%= form_with model: @item, local: true, html: { class: 'new-item-form' } do |form| %>
+    <div class="new-item-form-group">
+      <%= form.label :name, class: 'new-item-label' %>
+      <%= form.text_field :name, class: 'new-item-input' %>
+    </div>
+
+    <div class="new-item-form-group">
+      <%= form.label :description, class: 'new-item-label' %>
+      <%= form.text_area :description, class: 'new-item-textarea' %>
+    </div>
+
+    <div class="new-item-form-group">
+      <%= form.label :quantity, class: 'new-item-label' %>
+      <%= form.number_field :quantity, class: 'new-item-input' %>
+    </div>
+
+    <div class="new-item-actions">
+      <%= form.submit 'Create Item', class: 'new-item-submit' %>
+    </div>
+  <% end %>
+</div>
